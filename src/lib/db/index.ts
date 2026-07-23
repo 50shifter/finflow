@@ -38,7 +38,7 @@ pool.on('error', (err: Error) => {
   process.exit(-1);
 });
 
-export function query<T = any>(text: string, params?: unknown[]): Promise<{ rows: T[] }> {
+export async function query<T = any>(text: string, params?: unknown[]): Promise<{ rows: T[] }> {
   const start = Date.now();
   try {
     const result = await pool.query(text, params);
