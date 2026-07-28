@@ -1,29 +1,19 @@
-# FinFlow — Финансовый Dashboard
+# Finflow
 
-Панель управления личными финансами: аналитика, графики, категории, планирование целей. Работает с Supabase и в демо-режиме без БД.
+Personal finance tracker with analytics and budgeting tools.
 
-## Запуск (демо)
+## Features
 
-```bash
-cd web-dev-landing/finflow
-npm install
-npm run dev
-```
+- Каталог транзакций с фильтрами по дате, категории, сумме
+- Агрегация расходов по категориям с интерактивными графиками
+- Система финансовых целей с отслеживанием прогресса
+- Модель бюджета: лимиты по категориям + уведомления
+- Repository pattern, rate limiting, auth guards
+- Next.js 16, React 19, TypeScript, Supabase, PostgreSQL, Recharts
 
-Откройте http://localhost:3001. Демо-вход: demo@finflow.com / demo123
+## Screenshots
 
-## Подключение Supabase
-
-1. Создайте проект на [supabase.com](https://supabase.com/dashboard)
-2. Выполните SQL из `supabase-schema.sql` в SQL Editor
-3. Скопируйте ключи (Settings → API) и добавьте в `.env.local`:
-
-| Переменная | Описание |
-|------------|----------|
-| `NEXT_PUBLIC_SUPABASE_URL` | URL проекта |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Анонимный ключ |
-| `NEXT_PUBLIC_BASE_URL` | URL приложения |
-
-## Технологии
-
-Next.js 16, TypeScript, Tailwind CSS v4, Supabase (PostgreSQL + Auth), Recharts, Framer Motion, Zod.
+![Finflow Refs 1](public/screenshots/Finflow%20Refs.jpg)
+![Finflow Refs 2](public/screenshots/Finflow%20Refs2.jpg)
+![Finflow Refs 3](public/screenshots/Finflow%20Refs3.jpg)
+![Finflow Refs 4](public/screenshots/Finflow%20Refs4.jpg)
