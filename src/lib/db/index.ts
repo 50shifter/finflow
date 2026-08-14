@@ -21,8 +21,8 @@ function getEnv(name: string, fallback?: string): string {
 const pool = new Pool({
   host: process.env.DB_HOST || 'localhost',
   port: parseInt(process.env.DB_PORT, 10) || 5432,
-  database: getEnv('DB_NAME', 'vibeing_finflow'),
-  user: getEnv('DB_USER', 'vibeing'),
+  database: getEnv('DB_NAME'),
+  user: getEnv('DB_USER'),
   password: getEnv('DB_PASSWORD'), // 🔒 No fallback — must be set
   max: 20,
   idleTimeoutMillis: 30000,
@@ -38,7 +38,7 @@ pool.on('error', (err: Error) => {
   process.exit(-1);
 });
 
-export async function query<T = any>(text: string, params?: unknown[]): Promise<{ rows: T[] }> {
+export function query<T = any>(text: string, params?: unknown[]): Promise<{ rows: T[] }> {
   const start = Date.now();
   try {
     const result = await pool.query(text, params);

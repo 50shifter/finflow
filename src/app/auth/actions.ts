@@ -9,8 +9,9 @@
 import { createClient } from "@supabase/supabase-js";
 
 // Demo mode - credentials stored server-side only
+// 🔒 WARNING: Set ALLOW_DEMO_LOGIN=true in .env to enable
 const DEMO_EMAIL = "demo@finflow.com";
-const DEMO_PASSWORD = "demo123";  // Demo password — change in development
+const DEMO_PASSWORD = process.env.DEMO_PASSWORD || "demo123";
 const DEMO_NAME = "Алексей";
 
 export interface LoginResult {

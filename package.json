@@ -1,5 +1,5 @@
 {
-  "name": "shiftyweb/finflow",
+  "name": "finflow",
   "description": "Personal finance dashboard with Supabase, charts and PWA support",
   "version": "0.3.0",
   "private": true,

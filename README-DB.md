@@ -1,9 +1,8 @@
-# 🐘 PostgreSQL Setup для VibeING
+# 🐘 PostgreSQL Setup
 
 ## Вариант 1: Docker (рекомендуется)
 
 ```bash
-cd C:/Users/User/Documents/VibeING/web-dev-landing/finflow
 docker-compose up -d
 ```
 
@@ -20,20 +19,20 @@ docker-compose up -d
 ```sql
 -- Откройте psql или pgAdmin и выполните:
 
--- Создаём пользователя
-CREATE USER vibeing WITH PASSWORD 'vibeing123';
+-- Создаём пользователя (замените пароль)
+CREATE USER finflow WITH PASSWORD 'CHANGE_ME';
 
 -- Создаём базу данных
-CREATE DATABASE vibeing_finflow OWNER vibeing;
+CREATE DATABASE finflow OWNER finflow;
 
 -- Даем права
-GRANT ALL PRIVILEGES ON DATABASE vibeing_finflow TO vibeing;
+GRANT ALL PRIVILEGES ON DATABASE finflow TO finflow;
 
 -- Подключаемся к БД
-\c vibeing_finflow
+\c finflow
 
 -- Применяем schema
-\i C:\Users\User\Documents\VibeING\web-dev-landing\finflow\database\schema.sql
+\i ./database/schema.sql
 ```
 
 ## Вариант 3: PostgreSQL через winget
@@ -45,14 +44,13 @@ winget install PostgreSQL.PostgreSQL.16
 ## Проверка подключения
 
 ```bash
-cd C:/Users/User/Documents/VibeING/web-dev-landing/finflow
 npm run db:setup
 ```
 
 ## Структура БД
 
 ```
-vibeing_finflow
+finflow
 ├── profiles              # Пользователи
 ├── transactions          # Финансовые транзакции
 ├── goals                # Финансовые цели

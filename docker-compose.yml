@@ -3,11 +3,11 @@ version: '3.8'
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: vibeing-postgres
+    container_name: finflow-postgres
     environment:
-      POSTGRES_USER: vibeing
-      POSTGRES_PASSWORD: vibeing123
-      POSTGRES_DB: vibeing_finflow
+      POSTGRES_USER: ${DB_USER:-finflow}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-CHANGE_ME_IN_PRODUCTION}
+      POSTGRES_DB: ${DB_NAME:-finflow}
     ports:
       - "5432:5432"
     volumes:

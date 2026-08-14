@@ -3,10 +3,11 @@
 -- ============================================
 
 -- Create database (run as superuser)
-CREATE DATABASE vibeing_finflow;
+-- Note: may need to run as postgres superuser
+CREATE DATABASE finflow;
 
 -- Connect to the database
-\c vibeing_finflow;
+\c finflow;
 
 -- Profiles table
 CREATE TABLE IF NOT EXISTS profiles (
